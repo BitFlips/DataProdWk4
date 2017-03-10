@@ -37,9 +37,10 @@ The purpose of this pitch is to illustrate the integration of graphics, plotting
 - Miss Display: splash displayed at missed x,y position
 - Can show/hide submarine locations on screen via checkboxInput()
 
-## Submarine Hunt App Output Example  
-
-Hit = Explosion (x=7,y=7), Miss = Splash (x=3,y=3):
+## Submarine Hunt App qplot Output Examples    
+  
+ - Hit = Explosion: above water (x=7,y=7), below water (x=3,y=8) 
+ - Miss = Splash (x=3,y=3):
 
 ```{r echo = FALSE,message=FALSE,warning=FALSE}
 library(png)
@@ -85,9 +86,18 @@ x1b <- 7+0.7
 y1a <- 7-0.7
 y1b <- 7+0.7
 
-#-- hit example
+#-- above water hit example
 g <- g + annotation_raster(img1,xmin=x1a,xmax=x1b,ymin=y1a,ymax=y1b)
 g <- g + annotation_raster(img3,xmin=x1a,xmax=x1b,ymin=y1a,ymax=y1b)
+g <- g + annotation_raster(img2,xmin=x1a,xmax=x1b,ymin=y1a,ymax=y1b)
+
+x1a <- 3-0.7
+x1b <- 3+0.7
+y1a <- 8-0.7
+y1b <- 8+0.7
+
+#-- below water hit example
+g <- g + annotation_raster(img1,xmin=x1a,xmax=x1b,ymin=y1a,ymax=y1b)
 g <- g + annotation_raster(img2,xmin=x1a,xmax=x1b,ymin=y1a,ymax=y1b)
 
 x1a <- 3-0.7

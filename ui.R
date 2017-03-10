@@ -9,8 +9,8 @@ shinyUI(fluidPage(
       submitButton("Fire!"),
       
       h4("Controls"),
-      checkboxInput("showTrgt","Show Targets (submarines)",value=TRUE)
-      
+      checkboxInput("showTrgt","Targets above/below water",value=TRUE),
+      actionButton("newGame","New Game")
     ),
     
     mainPanel(
@@ -21,12 +21,13 @@ shinyUI(fluidPage(
       h6(" 1. Aim:  Select x,y target point with sliders"),
       h6(" 2. Shoot:  Press 'Fire!' button"),
       h6(" 3. See Results:  Hit = Explosion, Miss = Splash"),
-      h6(" Note: Change show/hide targets check box before pressing  'Fire!'"),
+      h6(" Note 1: Check box takes effect on next 'Fire!'"),
+      h6(" Note 2: New game takes effect on next 'Fire!'"),
       wellPanel( a("Link to ui.R in GitHub", 
-                   href="https://bitflips.github.io/DataProdWk2",
+                   href="https://github.com/BitFlips/DataProdWk4/blob/master/ui.R",
                    target="_blank")),
       wellPanel( a("Link to server.R in GitHub", 
-                   href="https://github.com/BitFlips/DataProdWk2/blob/gh-pages/index.Rmd",
+                   href="https://github.com/BitFlips/DataProdWk4/blob/master/server.R",
                    target="_blank"))
 
     )
